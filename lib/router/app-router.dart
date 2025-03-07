@@ -14,7 +14,7 @@ class AppRouter extends RootStackRouter {
 
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
-    : super(DashboardRoute.name, initialChildren: children);
+    : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 
@@ -34,5 +34,8 @@ class DashboardRoute extends PageRouteInfo<void> {
 
   //  static const PageInfo<void> page = PageInfo<void>(name);
   // static const PageInfo<StoryRouteArgs> page = PageInfo<S>(name);
-  static PageInfo page = PageInfo(name, builder: (data) => DashboardPage());
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) => DashboardPage(title: 'Dashboard'),
+  );
 }

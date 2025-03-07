@@ -1,16 +1,19 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auto_route/router/app-router.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  setPathUrlStrategy();
-  runApp(  MyApp());
+  if (kIsWeb) {
+    setPathUrlStrategy();
+  }
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-    MyApp({super.key});
- final _appRouter = AppRouter();
+  MyApp({super.key});
+  final _appRouter = AppRouter();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -32,14 +35,14 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple), 
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      
       ),
-      routerConfig: _appRouter.config(),
-     // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routerConfig: _appRouter.config(),debugShowCheckedModeBanner: false,
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
-
 
 // class MyHomePage extends StatefulWidget {
 //   const MyHomePage({super.key, required this.title});

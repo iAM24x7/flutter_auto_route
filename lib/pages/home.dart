@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auto_route/router/app-router.dart';
 
 // class HomePage extends StatelessWidget {
 //   const HomePage({super.key});
@@ -29,7 +31,7 @@ class HomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<HomePage> {
   int _counter = 0;
-
+  final _appRouter = AppRouter();
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -51,6 +53,8 @@ class _MyHomePageState extends State<HomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
+       // automaticallyImplyLeading: false, //back button hide
+        
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
@@ -58,6 +62,22 @@ class _MyHomePageState extends State<HomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(left: 5.0, right: 50.0),
+            child: InkWell(
+              child: Text('Home'),
+              onTap: () => context.router.navigate(const HomeRoute()),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 5.0, right: 155.0),
+            child: InkWell(
+              child: Text('Dashboard'),
+              onTap: () => context.router.navigate(const DashboardRoute()),
+            ),
+          ),
+        ],
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -78,7 +98,7 @@ class _MyHomePageState extends State<HomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('You have pushed the button this many times:'),
+            const Text('You have pushed the button this many times aaufsdf :'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
