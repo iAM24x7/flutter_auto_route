@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter_auto_route/pages/dashboard.dart';
-import 'package:flutter_auto_route/pages/home.dart';
+import 'package:flutter_auto_route/views/dashboard.dart';
+import 'package:flutter_auto_route/views/home.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Page,Route')
 class AppRouter extends RootStackRouter {
