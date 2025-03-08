@@ -20,10 +20,7 @@ class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
     : super(HomeRoute.name, initialChildren: children);
 
-  static const String name = 'HomeRoute';
-
-  //  static const PageInfo<void> page = PageInfo<void>(name);
-  // static const PageInfo<StoryRouteArgs> page = PageInfo<S>(name);
+  static const String name = 'HomeRoute'; 
   static PageInfo page = PageInfo(
     name,
     builder: (data) => HomePage(title: 'Home'),
@@ -35,9 +32,7 @@ class DashboardRoute extends PageRouteInfo<void> {
     : super(DashboardRoute.name, initialChildren: children);
 
   static const String name = 'DashboardRoute';
-
-  //  static const PageInfo<void> page = PageInfo<void>(name);
-  // static const PageInfo<StoryRouteArgs> page = PageInfo<S>(name);
+ 
   static PageInfo page = PageInfo(
     name,
     builder: (data) => DashboardPage(title: 'Dashboard'),
