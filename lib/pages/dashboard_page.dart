@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auto_route/router/app-router.dart';
+import 'package:flutter_auto_route/common/routes/app-router.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key, required this.title});
@@ -20,7 +20,7 @@ class _DashboardPageState extends State<DashboardPage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,   //back button hide
+        automaticallyImplyLeading: false, //back button hide
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
@@ -65,7 +65,10 @@ class _DashboardPageState extends State<DashboardPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text('You have pushed the button this many times :'),
-            Text('Dashboard', style: Theme.of(context).textTheme.headlineMedium),
+            Text(
+              'Dashboard',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
           ],
         ),
       ),

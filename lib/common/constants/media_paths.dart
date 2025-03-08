@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
- 
-
+  
 class ImageAnimationPath {
   // you can get free animation image from rive or lottiefiles
 

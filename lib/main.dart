@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auto_route/router/app-router.dart';
+import 'package:flutter_auto_route/common/routes/app-router.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 void main() {
@@ -36,9 +36,9 @@ class MyApp extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      
       ),
-      routerConfig: _appRouter.config(),debugShowCheckedModeBanner: false,
+      routerConfig: _appRouter.config(),
+      debugShowCheckedModeBanner: false,
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }

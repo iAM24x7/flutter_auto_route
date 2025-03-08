@@ -1,13 +1,17 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter_auto_route/views/dashboard.dart';
-import 'package:flutter_auto_route/views/home.dart';
+import 'package:flutter_auto_route/pages/dashboard_page.dart';
+import 'package:flutter_auto_route/pages/home_page.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Page,Route')
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
     AutoRoute(path: '/', page: HomeRoute.page),
-    AutoRoute(path: '/dashboard', page: DashboardRoute.page),
+    AutoRoute(
+      path: '/dashboard',
+      page: DashboardRoute.page,
+      children: [AutoRoute(path: 'all', page: DashboardRoute.page)],
+    ),
     RedirectRoute(path: '*', redirectTo: '/'),
   ];
 }
